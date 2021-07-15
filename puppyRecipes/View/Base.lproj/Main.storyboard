@@ -66,6 +66,137 @@ Podras encontrar más de un millón de recetas.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="639" y="93"/>
+        </scene>
+        <!--Ingredients Collection View Controller-->
+        <scene sceneID="thl-BX-rWx">
+            <objects>
+                <viewController id="Myj-Ig-efL" customClass="ingredientsCollectionViewController" customModule="puppyRecipes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0jj-XN-se4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Nombre de tu receta favorita" translatesAutoresizingMaskIntoConstraints="NO" id="BpX-H5-ODc">
+                                <rect key="frame" x="0.0" y="44" width="320" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O puedes seleccionar los ingredientes que mas te gusten para buscar una receta." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAl-S9-VhV">
+                                <rect key="frame" x="16" y="100" width="288" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="p9K-H0-ya5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n9P-z1-2BW">
+                                <rect key="frame" x="16" y="176" width="288" height="392"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A9l-st-rkF">
+                                    <size key="itemSize" width="170" height="170"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ingredientViewCell" id="w0F-du-VWB" customClass="ingredientViewCell" customModule="puppyRecipes" customModuleProvider="target">
+                                        <rect key="frame" x="59" y="0.0" width="170" height="170"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Spz-q0-x7b">
+                                            <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tray.and.arrow.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vJ2-Xj-qrk">
+                                                    <rect key="frame" x="45" y="7.5" width="80" height="80.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="C1V-ea-1bK"/>
+                                                        <constraint firstAttribute="width" constant="80" id="v4a-vv-jQF"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingrediente" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oc2-gf-wJH">
+                                                    <rect key="frame" x="8" y="96" width="154" height="62"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="154" id="z5f-Ce-UyA"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Oc2-gf-wJH" firstAttribute="leading" secondItem="Spz-q0-x7b" secondAttribute="leading" constant="8" id="5bf-7y-AbP"/>
+                                                <constraint firstItem="vJ2-Xj-qrk" firstAttribute="centerX" secondItem="Spz-q0-x7b" secondAttribute="centerX" id="HOd-p8-pZi"/>
+                                                <constraint firstItem="Oc2-gf-wJH" firstAttribute="top" secondItem="vJ2-Xj-qrk" secondAttribute="bottom" constant="8" id="R6O-Zo-VOr"/>
+                                                <constraint firstAttribute="bottom" secondItem="Oc2-gf-wJH" secondAttribute="bottom" constant="12" id="Zm1-uG-JLa"/>
+                                                <constraint firstItem="vJ2-Xj-qrk" firstAttribute="top" secondItem="Spz-q0-x7b" secondAttribute="top" constant="8" id="aAm-gz-3sy"/>
+                                                <constraint firstAttribute="trailing" secondItem="Oc2-gf-wJH" secondAttribute="trailing" constant="8" id="irW-ds-ra9"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" red="0.57664933490000003" green="0.75075050489999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <size key="customSize" width="170" height="170"/>
+                                        <connections>
+                                            <outlet property="ingredientIcon" destination="vJ2-Xj-qrk" id="XgV-w4-0yg"/>
+                                            <outlet property="ingredientName" destination="Oc2-gf-wJH" id="eLB-tv-oke"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Myj-Ig-efL" id="GTU-o8-FL2"/>
+                                    <outlet property="delegate" destination="Myj-Ig-efL" id="e0E-3J-H3j"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iya-pG-xd8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n9P-z1-2BW" firstAttribute="bottom" secondItem="iya-pG-xd8" secondAttribute="bottom" id="7v5-OK-Fk5"/>
+                            <constraint firstItem="n9P-z1-2BW" firstAttribute="top" secondItem="AAl-S9-VhV" secondAttribute="bottom" constant="16" id="Lnc-6M-UhL"/>
+                            <constraint firstItem="BpX-H5-ODc" firstAttribute="leading" secondItem="iya-pG-xd8" secondAttribute="leading" id="O9z-Cd-dPq"/>
+                            <constraint firstItem="n9P-z1-2BW" firstAttribute="leading" secondItem="iya-pG-xd8" secondAttribute="leading" constant="16" id="UsE-pF-QLX"/>
+                            <constraint firstItem="iya-pG-xd8" firstAttribute="trailing" secondItem="n9P-z1-2BW" secondAttribute="trailing" constant="16" id="YNw-Vx-O10"/>
+                            <constraint firstItem="iya-pG-xd8" firstAttribute="trailing" secondItem="AAl-S9-VhV" secondAttribute="trailing" constant="16" id="gMw-zv-Fj9"/>
+                            <constraint firstItem="BpX-H5-ODc" firstAttribute="top" secondItem="iya-pG-xd8" secondAttribute="top" id="hJY-7L-fdV"/>
+                            <constraint firstItem="AAl-S9-VhV" firstAttribute="top" secondItem="BpX-H5-ODc" secondAttribute="bottom" id="hRI-Lc-Hkf"/>
+                            <constraint firstItem="BpX-H5-ODc" firstAttribute="trailing" secondItem="iya-pG-xd8" secondAttribute="trailing" id="mBn-BD-hLs"/>
+                            <constraint firstItem="AAl-S9-VhV" firstAttribute="leading" secondItem="iya-pG-xd8" secondAttribute="leading" constant="16" id="xAS-vS-kpW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="kmW-Bv-w32"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WzP-4y-Sod" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1404.375" y="92.957746478873247"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="vPL-nC-KXg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r1A-fD-jFg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pwa-rL-NYg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NLL-wY-bLi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SFM-49-AHC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-213.75" y="92.957746478873247"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="recipePuppyMain" width="83.5" height="32.5"/>
+        <image name="tray.and.arrow.down" catalog="system" width="128" height="109"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
