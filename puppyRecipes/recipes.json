@@ -9,7 +9,7 @@
          "cebolla",
          "ajo",
          "arroz",
-         "salmon"
+         "zanahoria"
       ]
    },
    {
@@ -20,7 +20,20 @@
       "ingredients": [
          "salmon",
          "arroz",
-         "ajo"
+         "ajo",
+         "zanahoria"
+      ]
+   },
+   {
+      "recipeName": "pollo con zanahorias",
+      "description": "Es un platillo especial para tu perro",
+      "instructions": "Las instrucciones para preparar este delicioso platillo se encuentran aqui",
+      "mainIngredient": "pollo",
+      "ingredients": [
+         "pollo",
+         "zanahoria",
+         "arroz",
+         "cebolla"
       ]
    }
 ]
