@@ -14,4 +14,7 @@ class mainViewController: UIViewController {
         
     }
 
+    @IBAction func acGoToIngredientList(_ sender: Any) {
+        performSegue(withIdentifier: "IngredientList", sender: nil)
+    }
 }

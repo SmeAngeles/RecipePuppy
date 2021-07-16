@@ -9,8 +9,9 @@ import UIKit
 
 class ingredientsCollectionViewController: UIViewController {
     
+    @IBOutlet weak var collectionView: UICollectionView!
     var ingredientsList: [IngredientDataModel] = []
-    let stringList = ["Ajo", "Cebolla"]
+    let stringList = ["Ajo","Cebolla","Arroz","Salmon","Filete"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,12 +20,19 @@ class ingredientsCollectionViewController: UIViewController {
     
     func setIngredientList(){
         for string in stringList{
-            let ingredient = IngredientDataModel()
+            var ingredient = IngredientDataModel()
             ingredient.ingredientName = string
             ingredientsList.append(ingredient)
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let ingredientCell = sender as? ingredientViewCell,
+        let indexPath = collectionView.indexPath(for: ingredientCell),
+        let segue = segue.destination as? recipesViewController{
+            segue.ingredientSelected = ingredientsList[indexPath.row]
+        }
+    }
 }
 
 extension ingredientsCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate{
