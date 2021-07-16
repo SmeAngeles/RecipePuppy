@@ -11,7 +11,7 @@ class ingredientsCollectionViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var ingredientsList: [IngredientDataModel] = []
-    let stringList = ["Ajo","Cebolla","Arroz","Salmon","Filete"]
+    let stringList = ["Salmon","Filete","Arroz","Pollo","Zanahoria","Ajo","Cebolla"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,7 @@ class ingredientsCollectionViewController: UIViewController {
     func setIngredientList(){
         for string in stringList{
             var ingredient = IngredientDataModel()
-            ingredient.ingredientName = string
+            ingredient.ingredientName = string.lowercased()
             ingredientsList.append(ingredient)
         }
     }
@@ -29,7 +29,7 @@ class ingredientsCollectionViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let ingredientCell = sender as? ingredientViewCell,
         let indexPath = collectionView.indexPath(for: ingredientCell),
-        let segue = segue.destination as? recipesViewController{
+        let segue = segue.destination as? recipeListViewController{
             segue.ingredientSelected = ingredientsList[indexPath.row]
         }
     }
@@ -43,19 +43,15 @@ extension ingredientsCollectionViewController: UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let igredientCell =  collectionView.dequeueReusableCell(withReuseIdentifier: "ingredientViewCell", for: indexPath) as? ingredientViewCell
         igredientCell?.ingredientIcon.image = setIconName(indexPath: indexPath)
-        igredientCell?.ingredientName.text = ingredientsList[indexPath.row].ingredientName
+        igredientCell?.ingredientName.text = ingredientsList[indexPath.row].ingredientName.capitalized
         guard let cell = igredientCell else {return ingredientViewCell()}
         return cell
     }
     
     func setIconName(indexPath: IndexPath)-> UIImage{
-        let ingredientName = ingredientsList[indexPath.row]
-        let strIconName = ingredientName.setIngredietEnglishName(spanishName: ingredientName.ingredientName)
-        if let icon = UIImage(named: strIconName){
-            return icon
-        }else{
-            return UIImage(systemName: "tray.and.arrow.down") ?? UIImage()
-        }
-        
+        let ingredient = ingredientsList[indexPath.row]
+        let strIconName = ingredient.ingredientName
+        guard let icon = UIImage(named: strIconName) else {return UIImage(systemName: "tray.and.arrow.down") ?? UIImage() }
+        return icon
     }
 }

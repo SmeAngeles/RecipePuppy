@@ -9,36 +9,22 @@ import Foundation
 
 struct IngredientDataModel{
     var ingredientName:  String = ""
-    
-    func setIngredietSpanishName(name: String)-> String{
-        switch name {
-        case "garlic":
-            return "Ajo"
-        case "onion":
-            return "Cebolla"
-        case "rice":
-            return "Arroz"
-        case "salmon":
-            return "Salmon"
-        case "bistec":
-            return "Filete"
-        default:
-            return "ingredient"
-        }
-    }
-    
     func setIngredietEnglishName(spanishName: String)-> String{
         switch spanishName {
-        case "Ajo":
+        case "ajo":
             return "garlic"
-        case "Cebolla":
+        case "cebolla":
             return "onion"
-        case "Arroz":
+        case "arroz":
             return "rice"
-        case "Salmon":
+        case "salmon":
             return "salmon"
-        case "Filete":
-            return "bistec"
+        case "filete":
+            return "steak"
+        case "pollo":
+            return "chicken"
+        case "zanahoria":
+            return "carrot"
         default:
             return "ingrediente"
         }
