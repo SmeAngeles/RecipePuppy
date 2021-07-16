@@ -150,7 +150,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F888C58E269FE8AF0063C40C /* Build configuration list for PBXProject "puppyRecipes" */;
+			buildConfigurationList = F888C58E269FE8AF0063C40C /* Build configuration list for PBXProject "RecipePuppy" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -381,7 +381,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F888C58E269FE8AF0063C40C /* Build configuration list for PBXProject "puppyRecipes" */ = {
+		F888C58E269FE8AF0063C40C /* Build configuration list for PBXProject "RecipePuppy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F888C5A5269FE8B20063C40C /* Debug */,
