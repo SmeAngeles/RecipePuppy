@@ -17,6 +17,11 @@ class recipeListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = ingredientSelected?.ingredientName.capitalized ?? ""
+        if #available(iOS 13.0, *) {
+                indicator.style = .large
+               } else {
+                indicator.style = .whiteLarge
+               }
         recipeTable.isHidden = true
         consultRecipes()
     }
