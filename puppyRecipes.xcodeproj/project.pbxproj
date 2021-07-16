@@ -77,10 +77,6 @@
 				F888C5AD269FE8E70063C40C /* Controller */,
 				F888C596269FE8AF0063C40C /* AppDelegate.swift */,
 				F888C598269FE8AF0063C40C /* SceneDelegate.swift */,
-				F888C5AF269FF5980063C40C /* ingredientViewCell.swift */,
-				F8FE26E126A0808000757528 /* recipeTableViewCell.swift */,
-				F8FE26EC26A09F6D00757528 /* consultRecipes_WS.swift */,
-				F8FE26DE26A07CD300757528 /* recipes.json */,
 				F888C59F269FE8B20063C40C /* Assets.xcassets */,
 				F888C5A1269FE8B20063C40C /* LaunchScreen.storyboard */,
 				F888C5A4269FE8B20063C40C /* Info.plist */,
@@ -93,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				F888C59C269FE8AF0063C40C /* Main.storyboard */,
+				F888C5AF269FF5980063C40C /* ingredientViewCell.swift */,
+				F8FE26E126A0808000757528 /* recipeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -100,6 +98,8 @@
 		F888C5AC269FE8D10063C40C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F8FE26DE26A07CD300757528 /* recipes.json */,
+				F8FE26EC26A09F6D00757528 /* consultRecipes_WS.swift */,
 				F888C5B7269FFC650063C40C /* IngredientDataModel.swift */,
 				F8CAC2A326A0D97400D98F03 /* recepiDataModel.swift */,
 			);
