@@ -1,0 +1,26 @@
+[
+   {
+      "recipeName": "filete ahumado",
+      "description": "Es un platillo especial para tu perro",
+      "instructions": "Las instrucciones para preparar este delicioso platillo se encuentran aqui",
+      "mainIngredient": "filete",
+      "ingredients": [
+         "filete",
+         "cebolla",
+         "ajo",
+         "arroz",
+         "salmon"
+      ]
+   },
+   {
+      "recipeName": "salmon ahumado",
+      "description": "Es un platillo especial para tu perro",
+      "instructions": "Las instrucciones para preparar este delicioso platillo se encuentran aqui",
+      "mainIngredient": "salmon",
+      "ingredients": [
+         "salmon",
+         "arroz",
+         "ajo"
+      ]
+   }
+]
