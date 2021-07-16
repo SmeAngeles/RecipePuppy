@@ -51,7 +51,7 @@ extension ingredientsCollectionViewController: UICollectionViewDataSource, UICol
     func setIconName(indexPath: IndexPath)-> UIImage{
         let ingredient = ingredientsList[indexPath.row]
         let strIconName = ingredient.ingredientName
-        guard let icon = UIImage(named: strIconName) else {return UIImage(systemName: "tray.and.arrow.down") ?? UIImage() }
+        guard let icon = UIImage(named: strIconName) else {return UIImage()}
         return icon
     }
 }

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="r1A-fD-jFg">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -17,49 +18,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jqH-Ly-Xxq">
-                                <rect key="frame" x="32" y="220" width="256" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Poa-gT-sK7"/>
-                                </constraints>
-                                <string key="text">Recipe Puppy te permite buscar recetas para tu mascota con los ingredientes que mas le gusten. 
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aMF-an-LgF">
+                                <rect key="frame" x="8" y="76" width="304" height="460"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipePuppyMain" translatesAutoresizingMaskIntoConstraints="NO" id="EaA-yq-VkH">
+                                        <rect key="frame" x="32" y="31" width="240" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="GDD-Mq-dUV"/>
+                                            <constraint firstAttribute="width" constant="240" id="iG3-c7-ITf"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkf-Li-pgS">
+                                        <rect key="frame" x="8" y="357" width="288" height="50"/>
+                                        <color key="backgroundColor" red="1" green="0.73227904440000002" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="a4Y-Rq-8cG"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="288" id="ag1-p9-s9H"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <state key="normal" title="Buscar recetas">
+                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="acGoToIngredientList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dkm-DT-h6o"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jqH-Ly-Xxq">
+                                        <rect key="frame" x="8" y="166" width="288" height="128"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="h2k-No-LbC"/>
+                                        </constraints>
+                                        <string key="text">Recipe Puppy te permite buscar recetas para tu mascota con los ingredientes que mas le gusten. 
 
 Podras encontrar más de un millón de recetas.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="recipePuppyMain" translatesAutoresizingMaskIntoConstraints="NO" id="EaA-yq-VkH">
-                                <rect key="frame" x="40" y="108" width="240" height="100"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="VBi-or-uxH"/>
-                                    <constraint firstAttribute="height" constant="100" id="p0F-Kd-pa8"/>
+                                    <constraint firstItem="jqH-Ly-Xxq" firstAttribute="top" secondItem="EaA-yq-VkH" secondAttribute="bottom" constant="35" id="0Ec-7K-8Ho"/>
+                                    <constraint firstItem="jqH-Ly-Xxq" firstAttribute="centerX" secondItem="aMF-an-LgF" secondAttribute="centerX" id="0Nr-jV-bvN"/>
+                                    <constraint firstItem="jqH-Ly-Xxq" firstAttribute="centerY" secondItem="aMF-an-LgF" secondAttribute="centerY" id="0aB-dY-MIX"/>
+                                    <constraint firstAttribute="trailing" secondItem="jqH-Ly-Xxq" secondAttribute="trailing" constant="8" id="Iin-Kc-Oaa"/>
+                                    <constraint firstItem="jqH-Ly-Xxq" firstAttribute="leading" secondItem="aMF-an-LgF" secondAttribute="leading" constant="8" id="Pi5-H8-lNY"/>
+                                    <constraint firstItem="jqH-Ly-Xxq" firstAttribute="centerX" secondItem="EaA-yq-VkH" secondAttribute="centerX" id="XtJ-oC-IKp"/>
+                                    <constraint firstAttribute="trailing" secondItem="xkf-Li-pgS" secondAttribute="trailing" constant="8" id="aab-2T-kVY"/>
+                                    <constraint firstItem="xkf-Li-pgS" firstAttribute="leading" secondItem="aMF-an-LgF" secondAttribute="leading" constant="8" id="bQ4-KJ-lca"/>
+                                    <constraint firstItem="xkf-Li-pgS" firstAttribute="top" secondItem="jqH-Ly-Xxq" secondAttribute="bottom" constant="63" id="eXb-VG-r9h"/>
                                 </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xkf-Li-pgS">
-                                <rect key="frame" x="32" y="412" width="256" height="38"/>
-                                <color key="backgroundColor" red="1" green="0.73227904440000002" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                <state key="normal" title="Buscar mi receta!">
-                                    <color key="titleColor" systemColor="systemRedColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="acGoToIngredientList:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dkm-DT-h6o"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="xkf-Li-pgS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="5Ug-XI-6Sb"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jqH-Ly-Xxq" secondAttribute="trailing" constant="32" id="G0V-fh-VNg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xkf-Li-pgS" secondAttribute="trailing" constant="32" id="GFx-fp-oEp"/>
-                            <constraint firstItem="EaA-yq-VkH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="V0I-r2-akP"/>
-                            <constraint firstItem="EaA-yq-VkH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="amq-mj-XLa"/>
-                            <constraint firstItem="jqH-Ly-Xxq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="fVN-8M-IZz"/>
-                            <constraint firstItem="xkf-Li-pgS" firstAttribute="top" secondItem="jqH-Ly-Xxq" secondAttribute="bottom" constant="64" id="lV2-4G-2D7"/>
-                            <constraint firstItem="jqH-Ly-Xxq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="wV1-bV-794"/>
+                            <constraint firstItem="aMF-an-LgF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BXj-Y7-yZq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aMF-an-LgF" secondAttribute="bottom" constant="32" id="Gj0-PE-2bG"/>
+                            <constraint firstItem="aMF-an-LgF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="TMI-KB-88k"/>
+                            <constraint firstItem="aMF-an-LgF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="coN-20-L6P"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="!Bienvenido!" id="08o-aj-cdE">
@@ -71,9 +89,9 @@ Podras encontrar más de un millón de recetas.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="93"/>
+            <point key="canvasLocation" x="637.5" y="92.957746478873247"/>
         </scene>
-        <!--Ingredients Collection View Controller-->
+        <!--Ingredientes-->
         <scene sceneID="thl-BX-rWx">
             <objects>
                 <viewController id="Myj-Ig-efL" customClass="ingredientsCollectionViewController" customModule="puppyRecipes" customModuleProvider="target" sceneMemberID="viewController">
@@ -81,12 +99,8 @@ Podras encontrar más de un millón de recetas.</string>
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" placeholder="Nombre de tu receta favorita" translatesAutoresizingMaskIntoConstraints="NO" id="BpX-H5-ODc">
-                                <rect key="frame" x="0.0" y="44" width="320" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O puedes seleccionar los ingredientes que mas te gusten para buscar una receta." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAl-S9-VhV">
-                                <rect key="frame" x="16" y="100" width="288" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seleccionar el ingredientes que mas te gusten para buscar una receta." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAl-S9-VhV">
+                                <rect key="frame" x="16" y="60" width="288" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="p9K-H0-ya5"/>
                                 </constraints>
@@ -95,7 +109,7 @@ Podras encontrar más de un millón de recetas.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="n9P-z1-2BW">
-                                <rect key="frame" x="16" y="176" width="288" height="392"/>
+                                <rect key="frame" x="16" y="136" width="288" height="416"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="A9l-st-rkF">
                                     <size key="itemSize" width="170" height="170"/>
@@ -148,7 +162,7 @@ Podras encontrar más de un millón de recetas.</string>
                                                 <constraint firstAttribute="trailing" secondItem="MiF-06-6Ng" secondAttribute="trailing" constant="8" id="xV8-XT-9hD"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" red="0.57664933490000003" green="0.75075050489999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <size key="customSize" width="170" height="170"/>
                                         <connections>
                                             <outlet property="ingredientIcon" destination="vJ2-Xj-qrk" id="XgV-w4-0yg"/>
@@ -166,19 +180,16 @@ Podras encontrar más de un millón de recetas.</string>
                         <viewLayoutGuide key="safeArea" id="iya-pG-xd8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="n9P-z1-2BW" firstAttribute="bottom" secondItem="iya-pG-xd8" secondAttribute="bottom" id="7v5-OK-Fk5"/>
+                            <constraint firstItem="AAl-S9-VhV" firstAttribute="top" secondItem="iya-pG-xd8" secondAttribute="top" constant="16" id="Kle-93-Nxk"/>
                             <constraint firstItem="n9P-z1-2BW" firstAttribute="top" secondItem="AAl-S9-VhV" secondAttribute="bottom" constant="16" id="Lnc-6M-UhL"/>
-                            <constraint firstItem="BpX-H5-ODc" firstAttribute="leading" secondItem="iya-pG-xd8" secondAttribute="leading" id="O9z-Cd-dPq"/>
                             <constraint firstItem="n9P-z1-2BW" firstAttribute="leading" secondItem="iya-pG-xd8" secondAttribute="leading" constant="16" id="UsE-pF-QLX"/>
                             <constraint firstItem="iya-pG-xd8" firstAttribute="trailing" secondItem="n9P-z1-2BW" secondAttribute="trailing" constant="16" id="YNw-Vx-O10"/>
+                            <constraint firstItem="iya-pG-xd8" firstAttribute="bottom" secondItem="n9P-z1-2BW" secondAttribute="bottom" constant="16" id="axw-vL-7P9"/>
                             <constraint firstItem="iya-pG-xd8" firstAttribute="trailing" secondItem="AAl-S9-VhV" secondAttribute="trailing" constant="16" id="gMw-zv-Fj9"/>
-                            <constraint firstItem="BpX-H5-ODc" firstAttribute="top" secondItem="iya-pG-xd8" secondAttribute="top" id="hJY-7L-fdV"/>
-                            <constraint firstItem="AAl-S9-VhV" firstAttribute="top" secondItem="BpX-H5-ODc" secondAttribute="bottom" id="hRI-Lc-Hkf"/>
-                            <constraint firstItem="BpX-H5-ODc" firstAttribute="trailing" secondItem="iya-pG-xd8" secondAttribute="trailing" id="mBn-BD-hLs"/>
                             <constraint firstItem="AAl-S9-VhV" firstAttribute="leading" secondItem="iya-pG-xd8" secondAttribute="leading" constant="16" id="xAS-vS-kpW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="kmW-Bv-w32">
+                    <navigationItem key="navigationItem" title="Ingredientes" id="kmW-Bv-w32">
                         <barButtonItem key="backBarButtonItem" title=" " id="qyZ-aX-2SM"/>
                     </navigationItem>
                     <connections>
@@ -327,6 +338,9 @@ Podras encontrar más de un millón de recetas.</string>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
